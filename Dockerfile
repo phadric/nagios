@@ -32,8 +32,8 @@ ENV NG_NAGIOS_CONFIG_FILE=/etc/nagios/nagios.cfg
 ENV NG_NAGIOS_COMMANDS_FILE=/etc/nagios/objects/commands.cfg
 ENV NG_MODIFY_APACHE_CONFIG=n
 
-RUN cd /tmp/nagiosgraph-${NG_VERSION}
+RUN cd /tmp/nagiosgraph-${NG_VERSION} \
    &&  ./install.pl --install || /bin/true
-RUN cd /tmp
+RUN cd /tmp \
    &&  rm -Rf nagiosgraph
    
